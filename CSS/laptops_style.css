@@ -22,9 +22,57 @@ button:hover{
     background: linear-gradient(to right, #ff5722, #ff9800);
     transform: scale(1.05);
 }
+.desktop-menu {
+    display: block;
+}
 
-.category-btn{
-  margin-right: 30px;
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    font-size: 24px;
+    color: white;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    background: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    text-align: center;
+    z-index: 1000
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+}
+
+.mobile-menu ul li {
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-menu ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.mobile-menu ul li a:hover {
+    color: #ff5722;
 }
 
 .header-container {
@@ -66,11 +114,7 @@ nav a:hover{
     color: #ff9800;
 }
 
-.auth {
-    display: flex;
-    align-items: center;
-    margin-right: 40px;
-}
+
 
 
 
@@ -83,7 +127,15 @@ nav a:hover{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+
 }
+
+
+.category-btn{
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  
 
 .product-container {
     display: flex;
@@ -107,3 +159,12 @@ nav a:hover{
     transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
