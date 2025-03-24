@@ -8,21 +8,28 @@
 
 </head>
 <body>
-    
-    <div class="header-container">
-        <div class="auth">
-            <button class="login-btn">Login / Signup</button>
+    <header>
+        <div class="header-container">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            
+            <nav class="desktop-menu">
+                <a href="index.html">Home</a>
+                <a href="#">Categories</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="logo">
+                <h5>PC Market</h5>
+            </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#">Categories</a>
-            <a href="#">Contact</a>
-        </nav>
-        <div class="logo">
-            <h5>PC Market</h5>
+        <div class="mobile-menu" id="mobileMenu">
+           
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
-    </div>
-</header>
+    </header>
     
     <div class="categories" id="categories">
         <h2>Newest Laptops 2025</h2>
@@ -32,5 +39,6 @@
     
     <script src="JS/data.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/responsive.js"></script>
 </body>
 </html>
