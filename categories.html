@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجات التصنيف</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="category-title">category products</h1>
+    
+    <div id="product-list" class="product-container"></div>
+
+    <script src="JS/data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get("category");
+            const productList = document.getElementById("product-list");
+            const categoryTitle = document.getElementById("category-title");
+
+            if (category && productsData[category]) {
+                categoryTitle.innerText = `Products ${category}`;
+                productsData[category].forEach(product => {
+                    const productElement = document.createElement("div");
+                    productElement.classList.add("product");
+                    productElement.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p><strong>Proccesor:</strong> ${product.cpu}</p>
+                        <p><strong>Price:</strong> ${product.price} EG</p>
+                    `;
+                    productElement.onclick = () => {
+                        window.location.href = `details.html?id=${product.id}&category=${category}`;
+                    };
+                    productList.appendChild(productElement);
+                });
+            } else {
+                categoryTitle.innerText = "notfound!";
+            }
+        });
+    </script>
+
+</body>
+</html>
