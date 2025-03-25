@@ -115,6 +115,18 @@ nav a:hover{
 }
 
 
+.cart-icon {
+    
+    position: fixed;
+    right: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 20px;
+    text-align: right;
+    z-index: 1000;
+}
+
+
 
 
 
@@ -166,5 +178,9 @@ nav a:hover{
 
     .menu-toggle {
         display: block;
+    }
+
+    .cart-icon {
+        font-size: 16px;
     }
 }
