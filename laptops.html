@@ -20,7 +20,13 @@
             <div class="logo">
                 <h5>PC Market</h5>
             </div>
+            <div class="cart-icon">
+            <a href="cart.html" >
+                🛒 <span id="cart-count"></span>
+            </a>
+            </div>
         </div>
+       
         <div class="mobile-menu" id="mobileMenu">
            
             <ul>
@@ -29,6 +35,8 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
+   
+      
     </header>
     
     <div class="categories" id="categories">
@@ -36,9 +44,11 @@
     </div>
     
     <div id="product-list" class="product-container"></div>
-    
-    <script src="JS/data.js"></script>
+ 
+    <script src="JS/data.json"></script>
     <script src="JS/script.js"></script>
+    
+    <script src="JS/cart.js"></script>
     <script src="JS/responsive.js"></script>
 </body>
 </html>
